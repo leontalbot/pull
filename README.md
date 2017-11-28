@@ -6,17 +6,18 @@ A tiny Clojure library to manipulate plain datastructures a la Datomic Pull API 
 Add the following dependency to your `project.clj` or `build.boot` file
 
 ```clojure
-[leontalbot/pull "0.1.0"]
+[SOON][leontalbot/pull "0.1.0"]
 ```
 
 ## Usage
 
+```clojure
 user=> (require '[leontalbot.pull.core :as pull])
 nil
 
 user=> (def data {:test {:a "a" :b [{:b1 "b1"} {:b1 "b1" :b2 "b2"}] :c {:c1 "c1" :c2 "c2"} :d #{"d"} :e [1 2 3]}})
 #'user/data
-
+```
 
 ### `get`
 
@@ -65,7 +66,7 @@ user=> (pull/pull data [:test] [:a {:b [:b1]}])
 {:a "a", :b ({:b1 "b1"} {:b1 "b1"})}
 ```
 
-## TODO IF NECESSARY
+## TODO (if necessary)
 
 ```clojure
 ;; select all except a key?
