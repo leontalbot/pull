@@ -30,9 +30,7 @@ user=> (pull/get data [:test])
 user=> (pull/get data [:test :c])
 {:c1 "c1", :c2 "c2"}
 ```
-...except it nicely maps a keyword query element to collection of hash-maps when needed...
-
-```clojure 
+...except when the get process encounters a vector, it maps the the next selector key to every maps inside the collection... 
 user=> (pull/get data [:test :b])
 [{:b1 "b1"} {:b1 "b1", :b2 "b2"}]
 
@@ -41,13 +39,13 @@ user=> (pull/get data [:test :b :b1])
 ```
 
 ### `pull`
-`pull` is similar to `clojure.core/keep-keys`...
+`pull` is similar to `clojure.core/select-keys`...
 
 ```clojure
 user=> (pull/pull data [:test])
 {:test {:a "a", :b [{:b1 "b1"} {:b1 "b1", :b2 "b2"}], :c {:c1 "c1", :c2 "c2"}, :d #{"d"}, :e [1 2 3]}}
 ```
-...except it can handle nested-keep-keys with the hash-map used in the query:
+...except it can handle nested selection with the hashmap syntax below::
 ```clojure
 user=> (pull/pull data [{:test [:a :b]}])
 {:test {:a "a", :b [{:b1 "b1"} {:b1 "b1", :b2 "b2"}]}}
@@ -56,7 +54,7 @@ user=> (pull/pull data [{:test [:a {:b [:b1]}]}])
 {:test {:a "a", :b ({:b1 "b1"} {:b1 "b1"})}}
 
 ```
-`pull` has also a 3 arity version, where it accepts both `get` and `pull` queries, in that order. This allow to "get-in" the datastructure before pulling:
+`pull` also has a 3-arity version, where it accepts both `get` and `pull` queries, in that order. This allow to "get-in" the datastructure before pulling:
 
 ```clojure
 user=> (pull/pull data [:test] [:a :b])
@@ -67,6 +65,8 @@ user=> (pull/pull data [:test] [:a {:b [:b1]}])
 ```
 
 ## TODO (if necessary)
+
+What can we do from there?
 
 ```clojure
 ;; select all except a key?
