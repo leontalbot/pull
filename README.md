@@ -30,7 +30,9 @@ user=> (pull/get data [:test])
 user=> (pull/get data [:test :c])
 {:c1 "c1", :c2 "c2"}
 ```
-...except when the get process encounters a vector, it maps the the next selector key to every maps inside the collection...```clojure
+...except when the get process encounters a vector, it maps the the next selector key to every maps inside the collection...
+
+```clojure
 user=> (pull/get data [:test :b])
 [{:b1 "b1"} {:b1 "b1", :b2 "b2"}]
 
@@ -46,7 +48,7 @@ user=> (pull/pull data [:test])
 {:test {:a "a", :b [{:b1 "b1"} {:b1 "b1", :b2 "b2"}], :c {:c1 "c1", :c2 "c2"}, :d #{"d"}, :e [1 2 3]}}
 ```
 
-...except it can handle nested selection with the hashmap syntax below::
+...except it can handle nested selection with the hashmap syntax below:
 
 ```clojure
 user=> (pull/pull data [{:test [:a :b]}])
