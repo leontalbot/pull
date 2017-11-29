@@ -30,7 +30,7 @@ user=> (pull/get data [:test])
 user=> (pull/get data [:test :c])
 {:c1 "c1", :c2 "c2"}
 ```
-...except when the get process encounters a vector, it maps the the next selector key to every maps inside the collection... 
+...except when the get process encounters a vector, it maps the the next selector key to every maps inside the collection...```clojure
 user=> (pull/get data [:test :b])
 [{:b1 "b1"} {:b1 "b1", :b2 "b2"}]
 
@@ -54,7 +54,7 @@ user=> (pull/pull data [{:test [:a {:b [:b1]}]}])
 {:test {:a "a", :b ({:b1 "b1"} {:b1 "b1"})}}
 
 ```
-`pull` also has a 3-arity version, where it accepts both `get` and `pull` queries, in that order. This allow to "get-in" the datastructure before pulling:
+`pull` also has a 3-arity version, where it accepts both `get` and `pull` queries, in that order. This allows to "get-in" the datastructure before pulling parts from it:
 
 ```clojure
 user=> (pull/pull data [:test] [:a :b])
