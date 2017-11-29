@@ -45,7 +45,9 @@ user=> (pull/get data [:test :b :b1])
 user=> (pull/pull data [:test])
 {:test {:a "a", :b [{:b1 "b1"} {:b1 "b1", :b2 "b2"}], :c {:c1 "c1", :c2 "c2"}, :d #{"d"}, :e [1 2 3]}}
 ```
+
 ...except it can handle nested selection with the hashmap syntax below::
+
 ```clojure
 user=> (pull/pull data [{:test [:a :b]}])
 {:test {:a "a", :b [{:b1 "b1"} {:b1 "b1", :b2 "b2"}]}}
@@ -54,6 +56,7 @@ user=> (pull/pull data [{:test [:a {:b [:b1]}]}])
 {:test {:a "a", :b ({:b1 "b1"} {:b1 "b1"})}}
 
 ```
+
 `pull` also has a 3-arity version, where it accepts both `get` and `pull` queries, in that order. This allows to "get-in" the datastructure before pulling parts from it:
 
 ```clojure
@@ -94,5 +97,4 @@ What can we do from there?
 
 Copyright © 2017 Leon Talbot
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
