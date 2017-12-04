@@ -1,5 +1,5 @@
 (defproject leontalbot/pull "0.1.0"
-  :description "Clojure library that offers a subset of Datomic Pull API or Om Next queries for plain data structures"
+  :description "A tiny Clojure library for manipulating plain datastructures a la Datomic Pull API or Om next queries."
   :url "http://github.com/leontalbot/pull"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
