@@ -1,6 +1,6 @@
 # leontalbot/pull
 
-A tiny Clojure library for manipulating plain datastructures a la Datomic Pull API or Om next queries. 
+A tiny Clojure library for manipulating plain data structures a la Datomic Pull API or Om next queries. 
 
 ## Installation
 Add the following dependency to your `project.clj` or `build.boot` file
