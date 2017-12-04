@@ -5,7 +5,7 @@ A tiny Clojure library for manipulating plain data structures a la Datomic Pull 
 ## Installation
 Add the following dependency to your `project.clj` or `build.boot` file
 
-[![Clojars Project](https://img.shields.io/clojars/v/leontalbot/pull.svg)]
+[![clojars project](http://clojars.org/leontalbot/pull/latest-version.svg)](http://clojars.org/leontalbot/pull)
 
 ## Usage
 
