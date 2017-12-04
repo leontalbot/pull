@@ -5,9 +5,7 @@ A tiny Clojure library to manipulate plain datastructures a la Datomic Pull API 
 ## Installation
 Add the following dependency to your `project.clj` or `build.boot` file
 
-```clojure
-[SOON][leontalbot/pull "0.1.0"]
-```
+[![clojars project](http://clojars.org/pull/latest-version.svg)](http://clojars.org/pull
 
 ## Usage
 
